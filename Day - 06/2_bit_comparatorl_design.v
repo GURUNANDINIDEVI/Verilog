@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module comparator_2bit (
     input [1:0] A, B,
     output reg A_greater, A_equal, A_less
