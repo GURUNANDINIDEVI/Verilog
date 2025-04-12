@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module tb_mux4to1;
     reg [1:0] sel;
     reg [3:0] d;
