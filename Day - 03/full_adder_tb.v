@@ -8,7 +8,7 @@ module full_adder_tb;
     wire sum;// Outputs
     wire cout;
     // Instantiate the Full Adder
-    full_adder uut (
+    full_adder u1 (
         .a(a),
         .b(b),
         .cin(cin),
