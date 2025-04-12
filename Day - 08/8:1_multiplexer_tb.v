@@ -5,7 +5,7 @@ reg [2:0] sel;
 reg [7:0] in;
 wire y;
 // Instantiate the DUT
-mux_8to1 uut (
+mux_8to1 u1 (
     .sel(sel),
     .in(in),
     .y(y)
