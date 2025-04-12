@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module full_adder(
     input wire A,       // Input A
     input wire B,       // Input B
