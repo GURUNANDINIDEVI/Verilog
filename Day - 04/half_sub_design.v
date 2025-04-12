@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module half_subtractor (
     input wire a, // Minuend
     input wire b, // Subtrahend
