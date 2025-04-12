@@ -5,7 +5,7 @@ module exor_gate_tb;
     reg b;
     wire y;        // Output
     // Instantiate the XOR gate
-    exor_gate uut (
+    exor_gate u1 (
         .a(a),
         .b(b),
         .y(y)
