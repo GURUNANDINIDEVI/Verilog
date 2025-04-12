@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module tb_demux_1to2;
     // Testbench signals
     reg din;
