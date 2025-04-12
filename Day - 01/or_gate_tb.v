@@ -5,7 +5,7 @@ module or_gate_tb;
     reg b;
     wire y;//outputs
  // Instantiate the OR gate
-    or_gate uut (
+    or_gate u1 (
         .a(a),
         .b(b),
         .y(y)
