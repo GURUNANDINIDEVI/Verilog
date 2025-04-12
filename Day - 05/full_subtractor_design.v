@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module full_subtractor (
     input A,       // Minuend
     input B,       // Subtrahend
