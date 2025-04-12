@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module half_adder_tb;
     reg a;// Inputs
     reg b;// Outputs
