@@ -6,7 +6,7 @@ module tb_demux_1to2;
     reg sel;
     wire y0, y1;
     // Instantiate the Demux
-    demux_1to2 uut (
+    demux_1to2 u1 (
         .din(din),
         .sel(sel),
         .y0(y0),
