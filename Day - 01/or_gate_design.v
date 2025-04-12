@@ -1,11 +1,11 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
 module or_gate(
-    input wire A,    // Input A
-    input wire B,    // Input B
-    output wire Y    // Output Y
+    input wire a,    // Input A
+    input wire b,    // Input B
+    output wire y    // Output Y
 );
 
-assign Y = A | B;  // OR operation
+assign y = a | b;  // OR operation
 
 endmodule
