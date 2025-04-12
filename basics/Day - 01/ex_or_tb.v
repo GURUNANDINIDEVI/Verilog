@@ -1,9 +1,9 @@
-module xor_gate_tb;
+module exor_gate_tb;
     reg a;         // Inputs
     reg b;
     wire y;        // Output
     // Instantiate the XOR gate
-    xor_gate uut (
+    exor_gate uut (
         .a(a),
         .b(b),
         .y(y)
