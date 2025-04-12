@@ -4,7 +4,7 @@ module tb_comparator_2bit;
     reg [1:0] A, B;
     wire A_greater, A_equal, A_less;
 
-    comparator_2bit uut (
+    comparator_2bit u1 (
         .A(A),
         .B(B),
         .A_greater(A_greater),
