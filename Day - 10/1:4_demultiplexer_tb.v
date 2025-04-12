@@ -5,7 +5,7 @@ module tb_demux_1to4;
     reg [1:0] sel;
     wire [3:0] y;
     // Instantiate the DUT
-    demux_1to4 uut (
+    demux_1to4 u1 (
         .din(din),
         .sel(sel),
         .y(y)
