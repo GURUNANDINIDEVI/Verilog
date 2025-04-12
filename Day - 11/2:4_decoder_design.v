@@ -1,4 +1,3 @@
-
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
 module decoder_2to4 (
