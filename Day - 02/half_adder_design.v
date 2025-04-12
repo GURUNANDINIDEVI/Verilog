@@ -1,13 +1,13 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
 module half_adder(
-    input wire A,    // Input A
-    input wire B,    // Input B
-    output wire Sum, // Sum output
-    output wire Carry // Carry output
+    input wire a,    // Input A
+    input wire b,    // Input B
+    output wire sum, // Sum output
+    output wire carry // Carry output
 );
 
-assign Sum = A ^ B;    // XOR for sum
-assign Carry = A & B;  // AND for carry
+assign sum = a ^ b;    // XOR for sum
+assign carry = a & b;  // AND for carry
 
 endmodule
