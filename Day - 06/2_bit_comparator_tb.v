@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module tb_comparator_2bit;
     reg [1:0] A, B;
     wire A_greater, A_equal, A_less;
