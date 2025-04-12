@@ -1,9 +1,9 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
 module exor_gate (
-    input A, 
-    input B, 
-    output Y
+    input a, 
+    input b, 
+    output y
 );
-    assign Y = A ^ B;
+    assign y = a ^ b;
 endmodule
