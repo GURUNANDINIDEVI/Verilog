@@ -2,9 +2,8 @@ module tb_mux4to1;
     reg [1:0] sel;
     reg [3:0] d;
     wire y;
-
     // Instantiate the multiplexer
-    mux4to1 uut (
+    mux4to1 u1 (
         .sel(sel),
         .d(d),
         .y(y)
