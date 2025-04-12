@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module mux4to1 (
     input  wire [1:0] sel,   // 2-bit select input
     input  wire [3:0] d,     // 4-bit data inputs
