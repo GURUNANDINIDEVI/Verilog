@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module and_gate_tb;
     // Inputs
     reg a;
