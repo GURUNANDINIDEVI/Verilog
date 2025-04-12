@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module demux_1to2 (
     input wire din,        // Data input
     input wire sel,        // Select line
