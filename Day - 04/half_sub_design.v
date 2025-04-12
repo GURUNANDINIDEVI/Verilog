@@ -1,9 +1,9 @@
 module half_subtractor (
-    input wire A, // Minuend
-    input wire B, // Subtrahend
-    output wire Difference, // Difference output
-    output wire Borrow // Borrow output
+    input wire a, // Minuend
+    input wire b, // Subtrahend
+    output wire difference, // Difference output
+    output wire borrow // Borrow output
 );
-assign Difference = A ^ B;
-assign Borrow = (~A) & B;
+assign difference = a ^ b;
+    assign borrow = (~a) & b;
 endmodule
