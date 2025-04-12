@@ -7,7 +7,7 @@ module and_gate_tb;
     // Output
     wire y;
   // Instantiate the AND gate
-    and_gate uut (
+    and_gate u1 (
         .a(a),
         .b(b),
         .y(y)
