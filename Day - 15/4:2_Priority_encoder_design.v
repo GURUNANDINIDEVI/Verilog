@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module priority_encoder_4to2 (
     input  [3:0] in,
     output reg [1:0] out
