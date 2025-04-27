@@ -1,3 +1,5 @@
+//T.Guru Nandini Devi
+//nandinidevitekumudi@gmail.com
 module alu (
     input  [3:0] a,
     input  [3:0] b,
