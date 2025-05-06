@@ -4,12 +4,7 @@ module tb_d_flip_flop;
     reg clk, rst, d;
     wire q;
     // Instantiate the flip-flop
-    d_flip_flop uut (
-        .clk(clk),
-        .rst(rst),
-        .d(d),
-        .q(q)
-    );
+    d_flip_flop u1 (.clk(clk),.rst(rst),.d(d),.q(q));
     // Clock generation: 10ns period
     always #5 clk = ~clk;
 
