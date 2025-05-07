@@ -4,7 +4,7 @@
 module tb_jk_flipflop;
     reg clk, reset, J, K;
     wire Q;
-    jk_flipflop uut (.clk(clk),.reset(reset),.J(J),.K(K),.Q(Q));
+    jk_flipflop u1(.clk(clk),.reset(reset),.J(J),.K(K),.Q(Q));
     // Clock generation
     always #5 clk = ~clk;
     initial begin
