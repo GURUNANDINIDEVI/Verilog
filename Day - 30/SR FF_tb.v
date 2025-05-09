@@ -4,7 +4,7 @@ module tb_sr_flip_flop;
     reg clk, rst, s, r;
     wire q;
     // Instantiate the module
-    sr_flip_flop uut (.clk(clk),.rst(rst),.s(s),.r(r),.q(q));
+    sr_flip_flop u1(.clk(clk),.rst(rst),.s(s),.r(r),.q(q));
 
     // Clock generation
     always #5 clk = ~clk;  // 10ns period
