@@ -5,7 +5,7 @@ reg clk, rst,load,shift;
 reg [3:0] data_in;
 wire [3:0] data_out;
 // Instantiate the shift register
-shift_register uut (.clk(clk).rst(rst),.load(load),.shift(shift),.data_in(data_in),.data_out(data_out));
+shift_register u1(.clk(clk).rst(rst),.load(load),.shift(shift),.data_in(data_in),.data_out(data_out));
 
 // Clock generation: 10ns period
 always #5 clk = ~clk;
