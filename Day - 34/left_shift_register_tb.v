@@ -1,35 +1,34 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
-module tb_shift_register;
-reg clk, rst,load,shift;
-reg [3:0] data_in;
-wire [3:0] data_out;
-// Instantiate the shift register
-shift_register u1(.clk(clk).rst(rst),.load(load),.shift(shift),.data_in(data_in),.data_out(data_out));
+module left_shift_register_tb;
 
-// Clock generation: 10ns period
-always #5 clk = ~clk;
+reg clk, rst, SI;
+wire [3:0] Q;
+
+// Instantiate the shift register
+left_shift_register u1(.clk(clk),.rst(rst),.SI(SI),.Q(Q));
+
+// Clock generation
+always #5 clk = ~clk;  // 10ns clock period
 
 initial begin
-    // VCD dump for waveform
-    $dumpfile("shift_register.vcd");
-    $dumpvars(0, tb_shift_register);
+    $display("Time\tclk rst SI | Q");
+    $monitor("%0t\t%b   %b   %b  | %b", $time, clk, rst, SI, Q);
 
-    // Initialize
-    clk = 0; rst = 1; load = 0; shift = 0; data_in = 4'b0000;
+    // Initialize signals
+    clk = 0; rst = 1; SI = 0;
+    #10;
 
-    // Reset pulse
-    #10 rst = 0;
+    // Deassert reset
+    rst = 0;
 
-    // Load 4-bit data
-    #10 data_in = 4'b1011; load = 1;
-    #10 load = 0;
+    // Shift in pattern: 1, 0, 1, 1
+    SI = 1; #10;
+    SI = 0; #10;
+    SI = 1; #10;
+    SI = 1; #10;
 
-    // Shift left 4 times
-    #10 shift = 1;
-    #40 shift = 0;
-
-    #10 $finish;
+    $finish;
 end
 
 endmodule
