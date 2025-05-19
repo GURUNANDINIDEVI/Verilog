@@ -1,39 +1,29 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
-module tb_shift_register_right;
-reg clk;
-reg rst;
-reg load;
-reg shift;
-reg [3:0] data_in;
-wire [3:0] data_out;
+module right_shift_register_tb;
+reg clk, rst, SI;
+wire [3:0] Q;
 
-// Instantiate the design under test (DUT)
-shift_register_right u1(.clk(clk),.rst(rst),.load(load),.shift(shift),.data_in(data_in),.data_out(data_out));
+// Instantiate the DUT
+right_shift_register u1(.clk(clk),.rst(rst),.SI(SI),.Q(Q));
 
-// Clock: 10ns period
+// Clock generation: 10 ns period
 always #5 clk = ~clk;
 
 initial begin
-    // Dump file for waveform
-    $dumpfile("shift_register_right.vcd");
-    $dumpvars(0, tb_shift_register_right);
-
-    // Initialize
-    clk = 0; rst = 1; load = 0; shift = 0; data_in = 4'b0000;
-
-    // Reset pulse
-    #10 rst = 0;
-
-    // Load input data
-    #10 data_in = 4'b1011; load = 1;
-    #10 load = 0;
-
-    // Shift right 4 times
-    #10 shift = 1;
-    #40 shift = 0;
-
-    #10 $finish;
+    $display("Time\tclk rst SI | Q");
+    $monitor("%0t\t%b   %b   %b  | %b", $time, clk, rst, SI, Q);
+    // Initial values
+    clk = 0; rst = 1; SI = 0;
+    #10;
+    // Release reset
+    rst = 0;
+    // Shift in pattern: 1, 0, 1, 1
+    SI = 1; #10;
+    SI = 0; #10;
+    SI = 1; #10;
+    SI = 1; #10;
+    $finish;
 end
 
 endmodule
