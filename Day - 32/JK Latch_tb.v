@@ -13,8 +13,8 @@ module tb_jk_latch;
 
     // Stimulus block
     initial begin
-        $display("Time\tj\tk\ten\trst\tq");
-        $monitor("%0dns\t%b\t%b\t%b\t%b\t%b", $time, j,k, en, rst, q);
+        $display("Time\tJ\tK\tenable\treset\tQ");
+      $monitor("%0dns\t%b\t%b\t%b\t%b\t%b", $time, J,K, enable, reset, Q);
         // Initialize
         J = 0; K = 0; enable = 0; reset = 1;
 
