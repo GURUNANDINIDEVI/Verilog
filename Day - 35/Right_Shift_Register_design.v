@@ -1,21 +1,17 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
-module shift_register_right (
+module right_shift_register (
     input clk,
     input rst,
-    input load,
-    input shift,
-    input [3:0] data_in,
-    output reg [3:0] data_out
+    input SI,           // Serial Input (bit to shift in from MSB side)
+    output reg [3:0] Q  // 4-bit register
 );
 
 always @(posedge clk or posedge rst) begin
     if (rst)
-        data_out <= 4'b0000;
-    else if (load)
-        data_out <= data_in;              // Load parallel data
-    else if (shift)
-        data_out <= {1'b0, data_out[3:1]}; // Right shift
+        Q <= 4'b0000;
+    else
+        Q <= {SI, Q[3:1]};  // Right shift and insert SI at MSB
 end
 
 endmodule
