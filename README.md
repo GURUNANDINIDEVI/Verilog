@@ -1,4 +1,5 @@
 100 Days of RTL Coding Challenge
+
 By Guru Nandini Devi | Verilog HDL | Digital Design | RTL Simulation
 
 Welcome to my journey of exploring and mastering Register Transfer Level (RTL) design using Verilog HDL. This challenge is designed to strengthen my fundamentals in VLSI, covering combinational and sequential circuits, arithmetic units, and more — all backed by simulation and waveform verification.
