@@ -3,9 +3,9 @@
 module async_counter (
     input clk,     // Main clock
     input rst,     // Asynchronous reset
-    output [3:0] q // 4-bit counter output
+    output reg [3:0] q // 4-bit counter output
 );
-reg [3:0] q;
+
 always @(posedge clk or posedge rst) begin
     if (rst)
         q[0] <= 0;
