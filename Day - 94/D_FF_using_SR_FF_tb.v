@@ -1,29 +1,20 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
-module tb_d_ff_using_sr;
-    reg clk, D;
+module tb_d_flipflop_using_sr;
+    reg D, clk;
     wire Q;
 
-    d_ff_using_sr uut (.clk(clk), .D(D), .Q(Q));
+    d_flipflop_using_sr dut (.D(D), .clk(clk), .Q(Q));
 
     initial begin
-        $display("Time\tClk\tD\tQ");
-        $monitor("%0t\t%b\t%b\t%b", $time, clk, D, Q);
-
-        clk = 0; D = 0;
-
+        $monitor("Time=%0t | D=%b | clk=%b | Q=%b", $time, D, clk, Q);
+        clk = 0;
+        D = 0;
         #5 D = 1;
-        #5 clk = 1; #5 clk = 0;
-
-        #5 D = 0;
-        #5 clk = 1; #5 clk = 0;
-
-        #5 D = 1;
-        #5 clk = 1; #5 clk = 0;
-
-        #5 $finish;
+        #10 D = 0;
+        #10 D = 1;
+        #10 $finish;
     end
 
-    // Clock toggle
-    always #2.5 clk = ~clk;
+    always #5 clk = ~clk; // Clock with 10 time unit period
 endmodule
