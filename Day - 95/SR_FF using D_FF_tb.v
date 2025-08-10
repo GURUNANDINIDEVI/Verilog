@@ -1,29 +1,24 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
-module tb_sr_using_dff;
-    reg clk, S, R;
+module tb_sr_using_d;
+    reg S, R, clk;
     wire Q;
 
-    sr_using_dff uut (.clk(clk), .S(S), .R(R), .Q(Q));
+    sr_using_d uut (.S(S), .R(R), .clk(clk), .Q(Q));
 
     initial begin
-        $dumpfile("sr_from_dff.vcd");
-        $dumpvars(0, tb_sr_using_dff);
-        $display("Time\tS R\tQ");
-        $monitor("%0t\t%b %b\t%b", $time, S, R, Q);
+        $monitor("Time=%0t | S=%b R=%b clk=%b | Q=%b", $time, S, R, clk, Q);
+        clk = 0;
+        
+        // Test sequence
+        S=0; R=0; #10; // No change
+        S=1; R=0; #10; // Set
+        S=0; R=0; #10; // Hold
+        S=0; R=1; #10; // Reset
+        S=1; R=1; #10; // Invalid
 
-        clk = 0; S = 0; R = 0;
-        #5 S = 1; R = 0; // Set
-        #5 clk = 1; #5 clk = 0;
-        #5 S = 0; R = 1; // Reset
-        #5 clk = 1; #5 clk = 0;
-        #5 S = 0; R = 0; // Hold
-        #5 clk = 1; #5 clk = 0;
-        #5 S = 1; R = 1; // Invalid
-        #5 clk = 1; #5 clk = 0;
-
-        #10 $finish;
+        $finish;
     end
 
-    always #2.5 clk = ~clk;
+    always #5 clk = ~clk; // 10-time unit clock
 endmodule
