@@ -1,24 +1,27 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
 module tb_t_using_sr;
-    reg clk, T;
+    reg T, clk;
     wire Q;
 
-    t_using_sr uut (.clk(clk), .T(T), .Q(Q));
+    t_using_sr uut (.T(T), .clk(clk), .Q(Q));
 
     initial begin
         $dumpfile("t_using_sr.vcd");
         $dumpvars(0, tb_t_using_sr);
-        $display("Time\tT\tQ");
-        $monitor("%0t\t%b\t%b", $time, T, Q);
 
-        clk = 0; T = 0;
-        #5 T = 1;
-        #10 T = 0;
-        #10 T = 1;
-        #10 T = 1;
-        #10 T = 0;
-        #10 $finish;
+        $monitor("Time=%0t | T=%b clk=%b | Q=%b", $time, T, clk, Q);
+
+        clk = 0;
+
+        T=0; #10; // Hold
+        T=1; #10; // Toggle
+        T=1; #10; // Toggle
+        T=0; #10; // Hold
+        T=1; #10; // Toggle
+        T=1; #10; // Toggle
+
+        $finish;
     end
 
     always #5 clk = ~clk;
