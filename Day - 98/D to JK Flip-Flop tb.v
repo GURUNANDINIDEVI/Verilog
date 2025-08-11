@@ -1,24 +1,24 @@
 //T.Guru Nandini Devi
 //nandinidevitekumudi@gmail.com
-module tb_jk_using_d;
-    reg clk, J, K;
+module tb_d_using_jk;
+    reg clk, D;
     wire Q;
 
-    jk_using_d uut (.clk(clk), .J(J), .K(K), .Q(Q));
+    d_using_jk uut (.clk(clk), .D(D), .Q(Q));
 
     initial begin
-        $dumpfile("jk_using_d.vcd");
-        $dumpvars(0, tb_jk_using_d);
-        $display("Time\tJ K\tQ");
-        $monitor("%0t\t%b %b\t%b", $time, J, K, Q);
+        $dumpfile("d_using_jk.vcd");
+        $dumpvars(0, tb_d_using_jk);
+        $display("Time\tD\tQ");
+        $monitor("%0t\t%b\t%b", $time, D, Q);
 
-        clk = 0; J = 0; K = 0;
+        clk = 0; D = 0;
 
-        #5  J = 1; K = 0;  // Set
-        #10 J = 0; K = 0;  // Hold
-        #10 J = 0; K = 1;  // Reset
-        #10 J = 1; K = 1;  // Toggle
-        #10 J = 1; K = 1;  // Toggle again
+        #5  D = 1;
+        #10 D = 0;
+        #10 D = 1;
+        #10 D = 1;
+        #10 D = 0;
         #10 $finish;
     end
 
